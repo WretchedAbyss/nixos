@@ -1,7 +1,10 @@
 { pkgs }:
 let
-  image = builtins.path {
-    path = ../../../assets/Background-SDDM.jpg;
+  imageLink = "https://github.com/WretchedAbyss/nixos/blob/777bbdd95f1e8eb3ae38807d72c6bd0c7eb694ac/assets/Background-SDDM.jpg";
+
+  image = pkgs.fetchurl {
+    url = imageLink;
+    sha256 = "0w9bysnrpscxhjpr81mha2sgkv8f8n7242v38qqppcg0mg9nip7n";
   };
 in
 pkgs.stdenv.mkDerivation {
