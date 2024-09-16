@@ -88,7 +88,7 @@
     settings = {
       Theme = {
         # The custom background is passed from the flake and used here
-        Background = "${pkgs.sddmBackground}/background.jpg";
+        Background = "${./../assets/Background-SDDM.jpg}";
       };
     };
   };

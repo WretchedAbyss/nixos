@@ -40,7 +40,6 @@
         modules = [
         ./system/configuration.nix
         grub2-themes.nixosModules.default
-        ./background.nix
         ];
        };
       };
