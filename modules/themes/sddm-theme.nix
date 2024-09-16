@@ -8,19 +8,18 @@ let
   };
 in
 pkgs.stdenv.mkDerivation {
-  name = "where-is-my-sddm-theme";
+  name = "win11-sddm-theme";
 
   src = pkgs.fetchFromGitHub {
-    owner = "stepanzubkov";
-    repo = "where-is-my-sddm-theme";
-    rev = "v1.11.0";
-    sha256 = "sha256-EzO+MTz1PMmgeKyw65aasetmjUCpvilcvePt6HJZrpo=";
+    owner = "birbkeks";
+    repo = "win11-sddm-theme";
+    rev = "v1.0";
+    sha256 = "0pgqdhcp0i5haqj8c6anzlwyh7gf7s59pv1c3chf4xmbagbz6w1f";
   };
 
   buildInputs = [ ];
   installPhase = ''
     mkdir -p $out
-    cp -R ./where_is_my_sddm_theme/* $out/
-    rm -r $out/example_configs
+    cp -R ./* $out/
   '';
 }
