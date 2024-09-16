@@ -4,27 +4,23 @@ let
 
   image = pkgs.fetchurl {
     url = imageLink;
-    sha256 = "0w9bysnrpscxhjpr81mha2sgkv8f8n7242v38qqppcg0mg9nip7n";
+    sha256 = "sha256-frXjr4MeQsyYrd1dQZlgKOsp06qA3pFBtwL5x5LkyIk=";
   };
 in
 pkgs.stdenv.mkDerivation {
-  name = "sddm-chili";
-  version = "0.1.5";
+  name = "where-is-my-sddm-theme";
 
   src = pkgs.fetchFromGitHub {
-    owner = "MarianArlt";
-    repo = "sddm-chili";
-    rev = "6516d50176c3b34df29003726ef9708813d06271";
-    sha256 = "036fxsa7m8ymmp3p40z671z163y6fcsa9a641lrxdrw225ssq5f3";
+    owner = "stepanzubkov";
+    repo = "where-is-my-sddm-theme";
+    rev = "v1.11.0";
+    sha256 = "sha256-EzO+MTz1PMmgeKyw65aasetmjUCpvilcvePt6HJZrpo=";
   };
 
   buildInputs = [ ];
   installPhase = ''
     mkdir -p $out
-    cp -R ./* $out/
-    cd $out/
-    rm assets/background.jpg || true
-    cp ${image} $out/assets/background.jpg
-    ls -lh $out/assets/  # Verify the image is copied
+    cp -R ./where_is_my_sddm_theme/* $out/
+    rm -r $out/example_configs
   '';
 }

@@ -18,7 +18,9 @@
   };
 
   outputs = { self, nixpkgs, grub2-themes, ... }@inputs:
-  let system = "x86_64-linux";
+  let 
+    system = "x86_64-linux";
+    #backgrounds_Module = import ./modules/themes/background.nix { inherit nixpkgs; };
 
     pkgs = import nixpkgs {
       inherit system;
@@ -38,6 +40,7 @@
         modules = [
         ./system/configuration.nix
         grub2-themes.nixosModules.default
+
         ];
        };
       };
