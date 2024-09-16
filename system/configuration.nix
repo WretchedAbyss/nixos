@@ -82,8 +82,22 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm = {
     enable = true;
-    theme = "${import ../modules/themes/sddm-theme.nix {inherit pkgs; }}";  # The name of the Chili theme
+    theme = "breeze";  # Set the SDDM theme to Breeze
+
+    # Flat INI-style settings for SDDM
+    settings = {
+      Theme = {
+        Current = "breeze";  # Set Breeze as the current theme
+        # Flat setting for the Breeze theme background image
+        Background = "${config.system.build.sddmBackgroundImage}";
+      };
     };
+  };
+
+  # Reference the image file using builtins.path
+  system.build.sddmBackgroundImage = builtins.path {
+    path = ./../assets/Background-SDDM.jpg;  # Path to your image in the assets directory
+  };
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
