@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ inputs, pkgs, lib, config, ... }:
 {
   sddmBackground = pkgs.lib.mkDerivation {
-    pname = "SDDM-background";
+    name = "SDDM-background";
     version = "1.0";
     # Navigate two levels up from "themes" to the root, then into "assets"
-    src = ../../../assets/Background-SDDM.jpg;
+    src = ./assets/Background-SDDM.jpg;
   };
 }

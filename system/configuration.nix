@@ -14,7 +14,6 @@
       ../modules/programs/essentialApps.nix
       ../modules/programs/games.nix
       ../modules/nvidia.nix
-      ../modules/themes/background.nix
     ];
 
   home-manager = {
