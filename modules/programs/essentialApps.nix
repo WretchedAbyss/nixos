@@ -16,7 +16,11 @@ in {
      kdePackages.kate
      kdePackages.plasma-pa
      kdePackages.sddm-kcm
-     pkgs.sddm-chili-theme
+     kdePackages.sddm
+     qt5.full
+     libsForQt5.qt5.qtquickcontrols
+     libsForQt5.qt5.qtquickcontrols2
+     libsForQt5.qt5.qtgraphicaleffects
      wget
      git
      htop
