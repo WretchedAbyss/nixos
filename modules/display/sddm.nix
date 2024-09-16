@@ -18,8 +18,6 @@ in {
       theme = "breeze";
       settings = {
         Theme = {
-          
-          Background = "${./../assets/Background-SDDM.jpg}";
       };
     };
   };
