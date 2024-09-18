@@ -15,6 +15,20 @@ in {
      kdePackages.kate
      kdePackages.plasma-pa    
      nix-prefetch-git
+     sddm-chili-theme
+     (where-is-my-sddm-theme.override {
+    themeConfig.General = {
+        background = toString ../../assets/Background-SDDM.jpg;
+        backgroundMode = "fill";
+        showUsersByDefault=true;
+        sessionsFontSize=13;
+        usersFontSize=22;
+        showSessionsByDefault=true;
+        passwordFontSize=28;
+        passwordInputWidth=0.10;
+    };
+})
+     libsForQt5.sddm
      wget
      git
      htop
