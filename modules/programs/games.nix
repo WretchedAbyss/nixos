@@ -14,6 +14,7 @@ in {
     # Add games
     nixpkgs.overlays = [ inputs.polymc.overlay ];
     environment.systemPackages = with pkgs; [
+     steam
      polymc
   ];
   };

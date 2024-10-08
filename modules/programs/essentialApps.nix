@@ -29,6 +29,7 @@ in {
     };
 })
      libsForQt5.sddm
+     libreoffice-qt6-fresh
      wget
      git
      htop
